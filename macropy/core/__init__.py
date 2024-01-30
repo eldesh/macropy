@@ -241,6 +241,8 @@ trec = {
                                       else " " + rec(tree.operand, i)) +
                                      ")"),
 
+    ast.Constant:   lambda tree, i: ("(" + ("Constant(%s)" % tree.value) + ")"),
+
     ast.BinOp:      lambda tree, i: ("(" + rec(tree.left, i) + " " +
                                      binop[tree.op.__class__] + " " +
                                      rec(tree.right, i) + ")"),
